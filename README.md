@@ -2,17 +2,18 @@
 
 **Internship Project @ Value Digital Services**
 
-A data-driven recommendation engine designed to identify, rank, and categorize points of interest (POIs) for the Smoov mobile application based on cultural relevance and a unique "surprise" factor[cite: 2].
+A data-driven recommendation and scoring engine built for the Smoov mobile application. This project analyzes cultural points of interest (POIs) to surface locations that are historically significant and uniquely surprising for users[cite: 2].
 
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-</p>
+## 🎯 Project Objective
+To identify and rank the most interesting places by establishing data-driven **Relevance** and **Surprise** scores using web scraping, feature engineering, and Machine Learning clustering[cite: 2].
 
-## Project Overview
+## 🛠️ Methodology & Tech Stack
 
-*   **Data Ingestion & Scraping:** Developed Python web scraping pipelines to collect POI metrics, including Wikipedia page length, Google Maps review sentiment, and user ratings volume[cite: 2]. The resulting datasets structure key variables like `UNESCO` status, `heritage` tags, and `Total number of ratings`.
-*   **Relevance Scoring:** Engineered a weighted mathematical model ($R=w_{1}\cdot WWC+w_{2}\cdot RSS+w_{3}\cdot \log(1+NR)+w_{4}\cdot UNESCO+w_{5}\cdot Heritage...$) to rank locations based on historical significance and visitor consensus[cite: 2].
-*   **Surprise Scoring (Clustering):** Implemented unsupervised machine learning algorithms (K-Means and Self-Organizing Maps) to group locations by hidden characteristics[cite: 2]. This isolates "surprising" or off-the-beaten-path locations by analyzing unique visitor trends and text-mining cultural significance from reviews[cite: 2]. 
-*   **Impact:** Empowers Smoov app users to sort and discover highly relevant or uniquely surprising heritage sites easily[cite: 2].
+*   **Data Collection & Cleaning (Python, Pandas):** Engineered pipelines to scrape and consolidate POI data, extracting metrics like Wikipedia page lengths, Google Maps reviews, and geographic coordinates. 
+*   **Feature Engineering:** Processed key variables from raw data, including `UNESCO` status, `heritage` classification, `Average Rating`, and `Total number of ratings` to feed the scoring model.
+*   **Relevance Scoring (Math Modeling):** Implemented a custom weighted scoring formula combining historical data and visitor sentiment[cite: 2]:
+    $$R = w_{1} \cdot WWC + w_{2} \cdot RSS + w_{3} \cdot \log(1+NR) + w_{4} \cdot UNESCO + w_{5} \cdot Heritage + w_{6} \cdot Cat + w_{7} \cdot Type$$
+*   **Surprise Scoring (Unsupervised ML):** Applied K-Means clustering and Self-Organizing Maps to group locations based on hidden characteristics, helping to identify off-the-beaten-path or unexpectedly unique places[cite: 2].
+
+## 🚀 Business Impact
+The resulting algorithms allow the Smoov app to categorize places dynamically, enabling users to sort destinations by both relevance and surprise, significantly improving the app's discovery experience[cite: 2].
