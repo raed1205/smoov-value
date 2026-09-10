@@ -55,4 +55,5 @@ $$R = w_1 \cdot WWC + w_2 \cdot RSS + w_3 \cdot \log(1+NR) + w_4 \cdot UNESCO + 
 
 ## Team & Credits
 
-Internship Project at **Value Digital Services**.  
+Internship Project at **Value Digital Services**. 
+The Value and Smoov Team
