@@ -1,19 +1,59 @@
 # Smoov: Relevance & Surprise Scoring Engine
 
-**Internship Project @ Value Digital Services**
+Data-driven recommendation and ranking engine developed during a Business Intelligence internship at **Value Digital Services** for the Smoov travel application[cite: 2]. The system processes cultural points of interest (POIs), scoring and categorizing locations based on historical relevance and unique "surprise" metrics[cite: 2].
 
-A data-driven recommendation and scoring engine built for the Smoov mobile application. This project analyzes cultural points of interest (POIs) to surface locations that are historically significant and uniquely surprising for users[cite: 2].
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
+</p>
 
-##  Project Objective
-To identify and rank the most interesting places by establishing data-driven **Relevance** and **Surprise** scores using web scraping, feature engineering, and Machine Learning clustering[cite: 2].
+---
 
-##  Methodology & Tech Stack
+## Project Artifacts
 
-*   **Data Collection & Cleaning (Python, Pandas):** Engineered pipelines to scrape and consolidate POI data, extracting metrics like Wikipedia page lengths, Google Maps reviews, and geographic coordinates. 
-*   **Feature Engineering:** Processed key variables from raw data, including `UNESCO` status, `heritage` classification, `Average Rating`, and `Total number of ratings` to feed the scoring model.
-*   **Relevance Scoring (Math Modeling):** Implemented a custom weighted scoring formula combining historical data and visitor sentiment[cite: 2]:
-    $$R = w_{1} \cdot WWC + w_{2} \cdot RSS + w_{3} \cdot \log(1+NR) + w_{4} \cdot UNESCO + w_{5} \cdot Heritage + w_{6} \cdot Cat + w_{7} \cdot Type$$
-*   **Surprise Scoring (Unsupervised ML):** Applied K-Means clustering and Self-Organizing Maps to group locations based on hidden characteristics, helping to identify off-the-beaten-path or unexpectedly unique places[cite: 2].
+ **[View Presentation Slides (PDF)](Timeline%20Cycle%20Visual%20Charts%20Presentation%20in%20Blue%20White%20Teal%20Simple%20Style.pdf)**[cite: 2]  
+ **[View Processed Dataset (Excel)](last.xlsx)**
 
-## Business Impact
-The resulting algorithms allow the Smoov app to categorize places dynamically, enabling users to sort destinations by both relevance and surprise, significantly improving the app's discovery experience[cite: 2].
+---
+
+## Objective & Scope
+
+* **Objective:** Identify and rank cultural and historical locations across Tunisia using data-driven Relevance and Surprise scores[cite: 2].
+* **Scope:** Perform web scraping, clean multi-source geospatial data, execute review sentiment analysis, and train unsupervised clustering models to categorize POIs[cite: 2].
+
+---
+
+## Workflow & Methodology
+
+1. **Data Understanding & Cleaning:** Standardized POI names, coordinates, and metadata attributes[cite: 2].
+2. **Feature Extraction:** Scraped online reviews via APIs, calculated Wikipedia word counts, and extracted sentiment polarity scores[cite: 2].
+3. **Clustering Analysis:** Used K-Means and Self-Organizing Maps (SOM) to group POIs with similar traits into clusters (e.g., Highly Relevant, Highly Surprising, Irrelevant)[cite: 2].
+4. **Relevance Scoring:** Applied a multi-factor weighted equation incorporating structural and sentiment parameters[cite: 2].
+5. **Surprise Scoring:** Quantified unexpected location appeal by mining text reviews for historical significance, unique features, and visitor trends[cite: 2].
+
+---
+
+## Relevance Score Formula
+
+The **Relevance Score ($R$)** is calculated using the following weighted mathematical model[cite: 2]:
+
+$$R = w_1 \cdot WWC + w_2 \cdot RSS + w_3 \cdot \log(1+NR) + w_4 \cdot UNESCO + w_5 \cdot Heritage + w_6 \cdot Cat + w_7 \cdot Type$$
+
+| Feature Code | Variable Name | Description |
+|---|---|---|
+| **WWC** | Wikipedia Word Count | Total word count of the location's Wikipedia page[cite: 2] |
+| **RSS** | Review Sentiment Score | Average sentiment score from collected user reviews[cite: 2] |
+| **NR** | Number of Reviews | Total review count (log-transformed to manage extreme scale)[cite: 2] |
+| **UNESCO** | UNESCO Status | Binary indicator (1 if UNESCO site, 0 otherwise)[cite: 2] |
+| **Heritage** | Heritage Status | Binary indicator (1 if registered heritage site, 0 otherwise)[cite: 2] |
+| **Cat** | Category | Categorical classification rank (1 to 6)[cite: 2] |
+| **Type** | Type of Place | Encoded place type (e.g., historical, natural, cultural)[cite: 2] |
+
+---
+
+## Team & Credits
+
+Internship Project at **Value Digital Services**[cite: 2].  
+**Contributors:** Raed Meddeb, Sara Madden, Youssef Hachicha[cite: 2]
